@@ -47,56 +47,63 @@ const Programs = () => {
   ];
 
   return (
-    <section id="programs" className="py-20 lg:py-32 bg-gradient-subtle">
+    <section id="programs" className="py-20 lg:py-32 bg-gray-50 relative overflow-hidden">
+      {/* Background Neon Blobs */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute -top-16 -left-10 w-72 h-72 bg-purple-400/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute -bottom-20 -right-20 w-96 h-96 bg-indigo-400/20 rounded-full blur-3xl animate-pulse"></div>
+      </div>
+
       <div className="container mx-auto px-4">
+        {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-section-title fade-in-up">
+          <h2 className="text-4xl lg:text-5xl font-extrabold text-gray-900 fade-in-up">
             Our Programs
           </h2>
-          <p className="text-xl text-muted-foreground mt-4 max-w-3xl mx-auto fade-in-up stagger-1">
+          <p className="text-lg lg:text-xl text-gray-600 mt-4 max-w-3xl mx-auto fade-in-up stagger-1">
             Comprehensive tutoring programs designed to help students excel in every subject area.
           </p>
         </div>
 
+        {/* Program Cards */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {subjects.map((subject, index) => (
             <div
               key={index}
-              className={`card-premium relative group fade-in-up stagger-${(index % 6) + 1}`}
+              className="relative group bg-white/90 backdrop-blur-md border border-gray-200 rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 fade-in-up"
             >
+              {/* Popular Badge */}
               {subject.popular && (
-                <div className="absolute -top-3 left-6 px-3 py-1 bg-secondary text-secondary-foreground text-sm font-medium rounded-full">
+                <div className="absolute -top-3 left-6 px-3 py-1 bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-sm font-semibold rounded-full shadow-lg">
                   Most Popular
                 </div>
               )}
-              
+
+              {/* Icon & Title */}
               <div className="flex items-center mb-4">
-                <div className="p-3 bg-gradient-hero rounded-xl mr-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="p-3 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
                   <subject.icon className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="text-xl font-poppins font-semibold text-foreground">
-                  {subject.title}
-                </h3>
+                <h3 className="text-xl font-semibold text-gray-900 ml-4">{subject.title}</h3>
               </div>
-              
-              <p className="text-muted-foreground mb-6 leading-relaxed">
-                {subject.description}
-              </p>
-              
-              <ul className="space-y-2">
+
+              {/* Description */}
+              <p className="text-gray-600 mb-6">{subject.description}</p>
+
+              {/* Features */}
+              <ul className="space-y-2 mb-6">
                 {subject.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-center text-sm">
-                    <div className="w-1.5 h-1.5 bg-secondary rounded-full mr-3"></div>
-                    <span className="text-muted-foreground">{feature}</span>
+                  <li key={featureIndex} className="flex items-center text-sm text-gray-600">
+                    <div className="w-1.5 h-1.5 bg-purple-600 rounded-full mr-3 animate-pulse"></div>
+                    {feature}
                   </li>
                 ))}
               </ul>
-              
-              <div className="mt-6 pt-6 border-t border-border/30">
-                <button className="w-full btn-outline text-center group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
-                  Learn More
-                </button>
-              </div>
+
+              {/* Learn More Button */}
+              <button className="w-full py-2 rounded-xl border border-purple-600 text-purple-600 font-semibold text-sm hover:bg-gradient-to-r hover:from-purple-600 hover:to-indigo-600 hover:text-white transition-all duration-300">
+                Learn More
+              </button>
             </div>
           ))}
         </div>

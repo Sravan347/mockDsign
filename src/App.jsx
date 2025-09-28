@@ -5,7 +5,7 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Programs from "./components/Programs";
 import Tutors from "./components/Tutors";
-import HowItWorks from "./components/HowItWorks";
+
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
@@ -18,7 +18,7 @@ const App = () => {
         <section id="about"><About /></section>
         <section id="programs"><Programs /></section>
         <section id="tutors"><Tutors /></section>
-        <section id="how-it-works"><HowItWorks /></section>
+     
         <section id="contact"><Contact /></section>
       </main>
       <Footer />
