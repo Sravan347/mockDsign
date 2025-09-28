@@ -5,7 +5,7 @@ const Footer = () => {
     { name: "About Us", href: "#about" },
     { name: "Our Programs", href: "#programs" },
     { name: "Meet Tutors", href: "#tutors" },
-    { name: "How It Works", href: "#how-it-works" },
+  
   ];
 
   const subjects = [
